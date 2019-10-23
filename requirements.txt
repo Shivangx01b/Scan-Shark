@@ -1,3 +1,4 @@
 argparse
 google
-
+pycurl
+bs4
