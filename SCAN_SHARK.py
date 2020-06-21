@@ -224,7 +224,7 @@ def scanner(ip,protocol):
         
 def tcp_scan(ip,o):
     cmd1 = "nmap -sC -sV -p- --max-retries=10000 -Pn {}".format(ip)
-    run1 = os.popen(cmd1 + '>{}/nmap_tcp_scan.txt'.format(o))
+    run1 = os.system(cmd1 + '>{}/nmap_tcp_scan.txt'.format(o))
     file1 = 'nmap_tcp_scan'
     print(bcolors.OKGREEN + "[+] TCP Scan Started") 
     print(bcolors.CYAN + '[*] Saving file as {}.txt in {}'.format(file1,o))
@@ -232,7 +232,7 @@ def tcp_scan(ip,o):
     
 def udp_scan(ip,o):
     cmd2 = "nmap -sC -sV -sU -p- --max-retries=10000 -Pn {}".format(ip) 
-    run2 = os.popen(cmd2 + '>{}/nmap_udp_scan.txt'.format(o))
+    run2 = os.system(cmd2 + '>{}/nmap_udp_scan.txt'.format(o))
     file2 = 'nmap_udp_scan'
     print(bcolors.OKGREEN + "[+] UDP Scan Started")
     print(bcolors.CYAN + '[*] Saving files as {}.txt in {}'.format(file2,o))
